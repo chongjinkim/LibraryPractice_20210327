@@ -6,6 +6,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.bumptech.glide.Glide
 import com.gun0912.tedpermission.PermissionListener
 
 import com.gun0912.tedpermission.TedPermission
@@ -15,6 +16,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+//        활동 내역 이미지를 => 인터넷에 있는 이미지를 Glide를 통해서 불러내자
+        Glide.with(this).load("https://menu.mt.co.kr/moneyweek/thumb/2020/08/19/06/2020081916178065204_1.jpg").into(actionImg)
 
 
         callBtn.setOnClickListener {
