@@ -6,6 +6,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.gun0912.tedpermission.PermissionListener
 
 import com.gun0912.tedpermission.TedPermission
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
 //            권한 상태에 따른 행동 방침 변수 저장.
 
-            val pl = object : permissionListener {
+            val pl = object : PermissionListener {
                 override fun onPermissionGranted() {
 //                    권한이 허용되어 있는 경우. -> 여기 { } 안에 내용을 실행을 해 준다.
 //                    실제 전화를 걸자
@@ -44,7 +45,7 @@ class MainActivity : AppCompatActivity() {
             }
 
          TedPermission.with(this)
-                 .setPermissionListener(permissionListener)
+                 .setPermissionListener(pl)
                  .setDeniedMessage("[설정] - [권한] 에서 전화 권한을 허용해주세요")
                  .setPermissions(Manifest.permission.CALL_PHONE)
                  .check()
