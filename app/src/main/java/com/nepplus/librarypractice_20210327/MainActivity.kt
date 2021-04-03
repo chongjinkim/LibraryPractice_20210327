@@ -17,8 +17,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+//
 //        활동 내역 이미지를 => 인터넷에 있는 이미지를 Glide를 통해서 불러내자
-        Glide.with(this).load("https://menu.mt.co.kr/moneyweek/thumb/2020/08/19/06/2020081916178065204_1.jpg").into(actionImg)
+        Glide.with(this).load("http://menu.mt.co.kr/moneyweek/thumb/2020/08/19/06/2020081916178065204_1.jpg").into(actionImg)
 
 
         callBtn.setOnClickListener {
